@@ -1,0 +1,49 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "execute cobol build",
+            "type": "shell",
+            "command": "cobc",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "args": [
+                "-x",
+                "${file}"
+            ],
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "run cobol program",
+            "type": "shell",
+            "command": "${fileDirname}/${fileBasenameNoExtension}",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+        },
+        {
+            "label": "delete cobol program",
+            "type": "shell",
+            "command": "rm -f ${fileDirname}/${fileBasenameNoExtension}"
+        },
+        {
+            "label": "execute cobol program",
+            "type": "shell",
+            "command": "echo FINISHED",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "execute cobol build","run cobol program", "delete cobol program"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            
+        }
+    ]
+}
