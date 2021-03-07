@@ -14,4 +14,4 @@
        MAIN-PROCEDURE.
        DISPLAY 'Hello DIVISION'.
            STOP RUN.
-       END PROGRAM HELLO-WORLD.
+       END PROGRAM "HELLO-WORLD".
