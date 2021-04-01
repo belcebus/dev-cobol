@@ -31,25 +31,19 @@
         {
             "label": "run cobol program",
             "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "execute cobol build"
+            ],
             "command": "${fileDirname}/${fileBasenameNoExtension} && rm -f ${fileDirname}/${fileBasenameNoExtension}",
             "options": {
                 "cwd": "${fileDirname}"
             },
-        },
-        {
-            "label": "execute cobol program",
-            "type": "shell",
-            "command": "echo FINISHED",
-            "dependsOrder": "sequence",
-            "dependsOn": [
-                "execute cobol build","run cobol program"
-            ],
             "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            
         }
     ]
 }
