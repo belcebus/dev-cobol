@@ -19,7 +19,7 @@
                 "owner": "cobc",
                 "fileLocation": ["autoDetect", "${workspaceFolder}"],
                 "pattern": {
-                  "regexp": "^(.*): (\\d+):\\s+(warning|error):\\s+(.*)$",
+                  "regexp": "^(.*):(\\d+):\\s+(warning|error):\\s+(.*)$",
                   "file": 1,
                   "line": 2,
                   "severity": 3,
