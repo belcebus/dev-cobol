@@ -17,7 +17,7 @@
            
            PERFORM 00000-CALCULADORA UNTIL WKS-ELECCION = 2.
 
-       STOP RUN.
+           STOP RUN.
 
        00000-CALCULADORA.
            DISPLAY "1-. USAR LA CALCULADORA, 2-. SALIR".
