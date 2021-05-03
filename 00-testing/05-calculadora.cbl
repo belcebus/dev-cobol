@@ -1,0 +1,39 @@
+       IDENTIFICATION DIVISION.
+            PROGRAM-ID. 05-CALCULADORA.
+       
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+         WORKING-STORAGE SECTION.
+         77 WKS-NUM-1 PIC 9(05)V99.
+         77 WKS-NUM-2 PIC 9(05)V99.
+         77 WKS-RES PIC 9(10)V99.
+         77 WKS-RES-2 PIC 9(10)V99.
+
+       PROCEDURE DIVISION.
+           DISPLAY "CALCULADORA".
+           DISPLAY "DAME EL NUMERO 1:".
+           ACCEPT WKS-NUM-1.
+           DISPLAY "DAME EL NUMERO 2:".
+           ACCEPT WKS-NUM-2.
+
+           ADD WKS-NUM-1 TO WKS-NUM-2 GIVING WKS-RES.
+           DISPLAY "SUMA DE " WKS-NUM-1 " Y " WKS-NUM-2 " : " WKS-RES.
+           
+           SUBTRACT WKS-NUM-1 FROM WKS-NUM-2 GIVING WKS-RES.
+           DISPLAY "RESTA DE " WKS-NUM-2 " A " WKS-NUM-1 " : " WKS-RES.
+           
+           MULTIPLY WKS-NUM-1 BY WKS-NUM-2 GIVING WKS-RES.
+           DISPLAY "MULTIPLICACION DE " WKS-NUM-1 " POR " WKS-NUM-2 
+      -    " : " WKS-RES.
+           
+           DIVIDE WKS-NUM-1 BY WKS-NUM-2 GIVING WKS-RES.
+           DISPLAY "DIVISION DE " WKS-NUM-1 " ENTRE " WKS-NUM-2 " : " 
+      -    WKS-RES.
+
+           MOVE WKS-RES TO WKS-RES-2.
+           MOVE 15 TO WKS-RES.
+           MOVE "HOLA" TO WKS-RES-2.
+
+           DISPLAY WKS-RES-2.
+       STOP RUN.
+       END PROGRAM 05-CALCULADORA.

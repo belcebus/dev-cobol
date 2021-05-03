@@ -1,0 +1,49 @@
+       IDENTIFICATION DIVISION.
+            PROGRAM-ID. 06-CONDICIONES.
+       
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+         WORKING-STORAGE SECTION.
+      *S: ESTABLECE EL SIGNO: ENTEROS CON SIGNO
+         77 WKS-NUM-1 PIC S9(05)V99.
+         77 WKS-NUM-2 PIC S9(05)V99.
+         77 WKS-RES PIC S9(10)V99.
+         77 WKS-RES-2 PIC S9(10)V99.
+
+         77 WKS-OPCION PIC A(3).
+
+       PROCEDURE DIVISION.
+      *SECCION 
+       00001-MI-SECCION SECTION.
+      *PARRAFO
+       00001-MAIN.
+
+           DISPLAY "CALCULADORA".
+           DISPLAY "DAME EL NUMERO 1:".
+           ACCEPT WKS-NUM-1.
+           DISPLAY "DAME EL NUMERO 2:".
+           ACCEPT WKS-NUM-2.
+
+           DISPLAY "SELECCIONA OPERACION: S = SUMA, R: RESTA, "
+      -    "M:MULTIPLICAR, D:DIVISION".
+           ACCEPT WKS-OPCION.
+           
+      *    = | > | < | NOT = | NOT > | NOT <
+      *    LA UNICA CON PUNTO ES LA ULTIMA DEL BLOQUE IF   
+           IF WKS-OPCION = "S"
+             ADD WKS-NUM-1 TO WKS-NUM-2 GIVING WKS-RES
+             DISPLAY WKS-NUM-1 " + " WKS-NUM-2 " = " WKS-RES
+           ELSE IF WKS-OPCION = "R"
+             SUBTRACT WKS-NUM-2 FROM WKS-NUM-1 GIVING WKS-RES
+             DISPLAY WKS-NUM-1 " - " WKS-NUM-2 " = " WKS-RES
+           ELSE IF WKS-OPCION = "M"
+             MULTIPLY WKS-NUM-1 BY WKS-NUM-2 GIVING WKS-RES
+             DISPLAY WKS-NUM-1 " x " WKS-NUM-2 " = " WKS-RES
+           ELSE IF WKS-OPCION = "D"
+             DIVIDE WKS-NUM-1 BY WKS-NUM-2 GIVING WKS-RES
+             DISPLAY WKS-NUM-1 " / " WKS-NUM-2 " = " WKS-RES
+           ELSE
+             DISPLAY "OPERACION NO VALIDA".
+
+       STOP RUN.
+       END PROGRAM 06-CONDICIONES.
