@@ -12,7 +12,6 @@
                 "cwd": "${fileDirname}"
             },
             "args": [
-                "-Wno-dialect",
                 "-x",
                 "${file}"
             ],
